@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài tập từ điển </title>
+</head>
+<body>
+<input type="text" id="translate">
+<button type="button" onclick="tranSlate()">Tra cứu</button>
+<p id="result"></p>
+<script>
+    function tranSlate() {
+        let input = document.getElementById("translate").value;
+        let output;
+        let eng = [
+            ['hello', 'good', 'wellcome', 'good bye', 'see you again'],
+            ['apple', 'lemon',]
+        ];
+        let vie = [
+            ['Xin chào', 'tốt', 'Chào mừng', 'Tạm biệt', 'Hẹn gặp lại'],
+            ['quả táo', 'quả chanh']
+
+        ];
+        let flag = 0;
+        for (let i = 0; i < eng.length; i++) {
+            for (let j = 0; j < eng[i].length; j++) {
+                if (input === eng[i][j]) {
+                    output = vie[i][j];
+                    flag = 1;
+                }
+            }
+        }
+        if(flag === 0){
+            output = "not found";
+        }
+        document.getElementById("result").innerHTML = output;
+
+    }
+</script>
+</body>
+</html>
